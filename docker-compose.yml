@@ -1,0 +1,33 @@
+
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: football_test
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: football_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  
+  pipeline:
+    build: .
+    container_name: football_pipeline
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    environment:
+      - API_KEY=${API_KEY}
+      - DB_USER=admin
+      - DB_PASS=admin
+      - DB_HOST=postgres
+      - DB_NAME=football_db
+    command: ["python", "src/main.py"]
+
+volumes:
+  pgdata:
