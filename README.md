@@ -9,10 +9,10 @@ El proyecto sigue una estructura modular basada en un pipeline ETL simplificado:
 
 ```
 src/
- ├── database/      → Creación de Tablas
- ├── export/        → Consulta pedida exportada como CSV
- ├── extract/       → Extracción y transformación de datos desde la API
+ ├── extract/       → Extracción de datos desde la API
+ ├── transform/     → Transformación y creación de Tablas
  ├── load/          → Insertar datos en PostgreSQL
+ ├── export/        → Consulta pedida exportada como CSV
 ```
 
 ## Pasos para la ejecución
@@ -116,7 +116,7 @@ football_test/
 │
 └── src/
     ├── extract/
-    ├── database/
+    ├── transform/
     ├── load/
     └── export/
 
@@ -134,6 +134,8 @@ Estos son algunos de los siguientes pasos que deberían hacerse al escalar el pr
 - Validar y limpiar datos erroneos o nulos a traves de procesamiento de lenguaje natural y controles de calidad.
 - Incorporar tests automáticos.
 - Agregar cache y control de rate limits para mejorar eficiencia de descarga.
+- Agregar más manejo de errores y sistema de reintentos para fallos de la API.
+- Automatizar el pipeline con un algún orquestador.
 
 
 
