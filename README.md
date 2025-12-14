@@ -79,6 +79,7 @@ Se utilizó SQLAlchemy para mayor escabilidad junto con claridad en el código. 
 
 Utilizando pandas junto a la consulta pedida, se exporta el archivo output.csv dentro de la carpeta outputs, el cual contiene la siguiente información:
 
+```
 competition,num_teams
 Copa Libertadores,47
 UEFA Champions League,36
@@ -93,7 +94,7 @@ Ligue 1,18
 Bundesliga,18
 Primeira Liga,18
 FIFA World Cup,13
-
+```
 
 ## Estructura de carpetas final
 
