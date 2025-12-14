@@ -27,11 +27,12 @@ Python y PostgreSQL se instalan localmente en el contenedor.
 
 ### 2. Configurar variables de entorno
 
+```
 API_KEY=tu_api_key
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 POSTGRES_DB=football_db
-
+```
 
 ### 3. Construir y ejecutar los contenedores
 
@@ -96,6 +97,7 @@ FIFA World Cup,13
 
 ## Estructura de carpetas final
 
+```
 football_test/
 |
 ├── docker-compose.yml
@@ -119,7 +121,7 @@ football_test/
     ├── transform/
     ├── load/
     └── export/
-
+```
 
 ## Observaciones
 
