@@ -1,4 +1,3 @@
-
 # Test Football
 
 ## Descripción Test
@@ -19,7 +18,7 @@ src/
 
 ### 1. Requisitos previos
 
-- Docker 
+- Docker
 - Git
 - API Key válida de Football-Data.org
 
@@ -36,8 +35,7 @@ POSTGRES_DB=football_db
 
 ### 3. Construir y ejecutar los contenedores
 
-```docker compose up --build ```
-
+`docker compose up --build `
 
 ## Flujo del Pipeline
 
@@ -53,6 +51,7 @@ Los Endpoints son:
 - https://api.football-data.org/v4/competitions/{id}/teams
 
 Los datos extraídos incluyen:
+
 - Lista de competiciones
 - Lista de equipos para cada competición
 
@@ -128,8 +127,6 @@ football_test/
 
 El resultado obtenido en el output.csv es similar pero no igual al expuesto en el enunciado del test, donde efectivamente se encuentran las mismas 13 competencias pero varian el número de teams en algunas de ellas.
 
-
-
 ## Mejoras Futuras
 
 Estos son algunos de los siguientes pasos que deberían hacerse al escalar el proyecto en un entorno real
@@ -139,22 +136,3 @@ Estos son algunos de los siguientes pasos que deberían hacerse al escalar el pr
 - Agregar cache y control de rate limits para mejorar eficiencia de descarga.
 - Agregar más manejo de errores y sistema de reintentos para fallos de la API.
 - Automatizar el pipeline con un algún orquestador.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

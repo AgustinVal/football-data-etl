@@ -26,6 +26,26 @@ services:
     environment:
       - DB_HOST=postgres
     command: ["python", "src/main.py"]
+  
+  backend:
+    build: ./backend
+    container_name: football_backend
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_HOST=postgres
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    container_name: football_frontend
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
 
 volumes:
   pgdata:
